@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-slate-200;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-none px-8;
+  }
+  .site-grid {
+    @apply grid grid-cols-5 lg:grid-cols-12 gap-x-4 lg:gap-x-8;
+  }
+}
