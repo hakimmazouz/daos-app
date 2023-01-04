@@ -1,6 +1,8 @@
 import axios, { AxiosError } from "axios";
 import { CreatePostData } from "./types";
 
+console.log(import.meta.env.API_BASE_URL);
+
 export const client = axios.create({
   baseURL: import.meta.env.API_BASE_URL,
   timeout: 1000,
