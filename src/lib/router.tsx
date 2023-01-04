@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, LoaderFunction } from "react-router-dom";
 import EnsembleCreate, {
   action as ensembleCreateAction,
 } from "../views/EnsembleCreate";

@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { CreatePostData } from "./types";
 
 export const client = axios.create({
-  baseURL: "http://localhost:3000/api/",
+  baseURL: import.meta.env.API_BASE_URL,
   timeout: 1000,
   headers: {
     "Content-Type": "application/json",

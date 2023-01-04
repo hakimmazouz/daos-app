@@ -5,7 +5,7 @@ export const ensembleAmount = (amount: number) => {
   return `${amount} ${amount == 1 ? "ensemble" : "ensembles"}`;
 };
 
-export const cls = (...args) =>
+export const cls = (...args: any[]) =>
   args.reduce((total, current) => {
     if (current) {
       if (typeof current == "object") {

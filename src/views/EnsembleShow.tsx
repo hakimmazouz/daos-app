@@ -1,4 +1,9 @@
-import { Form, redirect, useLoaderData } from "react-router-dom";
+import {
+  Form,
+  LoaderFunctionArgs,
+  redirect,
+  useLoaderData,
+} from "react-router-dom";
 import Button from "../components/Button";
 import IndexHero from "../components/IndexHero";
 import Layout from "../components/Layout";
@@ -8,10 +13,14 @@ import { memberAmount } from "../lib/helpers";
 import { useAuthStore } from "../lib/store";
 import { Ensemble } from "../lib/types";
 
-export async function loader({ params }: { params: { ensembleId: string } }) {
-  const { data, error } = await ensembles.show(params.ensembleId);
-  if (error) return redirect("/ensembles");
-  return data;
+export async function loader({ params }: LoaderFunctionArgs) {
+  if (params.ensembleId) {
+    const { data, error } = await ensembles.show(params.ensembleId);
+    if (error) return redirect("/ensembles");
+    return data;
+  }
+
+  return redirect("/ensembles");
 }
 
 export default function EnsembleShow() {
